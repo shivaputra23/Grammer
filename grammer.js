@@ -1,5 +1,5 @@
-function textDisplay(){
-    var fileToLoad = document.getElementById("fileLoding").files[0];
+function loadContent(){
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
 
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent){
@@ -10,7 +10,7 @@ function textDisplay(){
     fileReader.readAsText(fileToLoad, "UTF-8");
   }
 window.onload=function(){
-    fetchApi("GET")
+    fetchApi("Get")
 };
 function fetchApi(text){
     var requestOptions = {
