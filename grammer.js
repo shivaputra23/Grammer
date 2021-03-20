@@ -1,10 +1,10 @@
-function loadFileAsText(){
-    var fileToLoad = document.getElementById("fileToLoad").files[0];
+function textDisplay(){
+    var fileToLoad = document.getElementById("fileLoding").files[0];
 
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent){
         var textFromFileLoaded = fileLoadedEvent.target.result;
-        document.getElementById("inputTextToSave").value = textFromFileLoaded;
+        document.getElementById("textWindow").value = textFromFileLoaded;
     };
 
     fileReader.readAsText(fileToLoad, "UTF-8");
