@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Cool Veggies</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function ValidateEmail(inputText)
+    {
+      var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if(inputText.value.match(mailformat))
+      {
+        //alert("Valid email address!");
+        document.getElementById('border').style.borderColor = "initial"
+        document.form.text.focus();
+        return true;
+      }
+      else
+      {
+        //alert("You have entered an invalid email address!");
+        document.getElementById('border').style.borderColor = "red"
+        document.form.text.focus();
+        return false;
+      }
+    }
+  //   function myFunction(){
+  //     var input, filter, table, tr, td, i, txtValue;
+  //     input = document.getElementById("myInput");
+  //     filter = input.value.style;
+  //     heading = document.getElementsByClassName("panel-heading");
+  //     data = document.getElementsByClassName("panel panel-primary");
+  //     for (i = 0; i < input.length; i++) {
+  //       head = heading[i].getElementsByClassName("panel-heading")[0];
+  //       if (head) {
+  //         txtValue = head.textContent || head.innerText;
+  //         if (txtValue.indexOf(filter) > -1) {
+  //          data.style.display = "";
+  //         } else {
+  //           data.style.display = "none";
+  //         }
+  //   }       
+  //   }
+  // }
+  </script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+
+    /* Remove the jumbotron's default bottom margin */
+    .jumbotron {
+      margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    #addItems {
+      float:right;
+    }
+    #myInput{
+      margin: 5px;
+      padding: 8px;
+      border-radius: 10px;
+    }
+    #selectName{
+      margin:8px;
+      padding:8px;
+      border-radius: 10px;
+    }
+    .panel-body:hover{
+      background-color: #b4b4f1;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#"> <strong> Best Veggies </strong> </a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Deals</a></li>
+          <li><a href="#">Stores</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Veggies names.." title="Type in a name"></li>
+        </ul>
+        <select name="" id="selectName">
+          <option value="">Select the name</option>
+          <option value="">Fruits</option>
+          <option value="">Vegetables</option>
+        </select>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div id="tomatoDiv" class="col-sm-4">
+        <div class="panel panel-primary ">
+          <div class="panel-heading">Tomatoes </div>
+          <div class="panel-body"><img src="cart Images/tomato.jpg" class="img-responsive"
+              style="width:100%; height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <button id="tomatoButton" type="button" class="btn btn-primary">Buy Tomato's</button>
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Cucumber's</div>
+          <div class="panel-body"><img src="cart Images/cucumber.jpg" class="img-responsive"
+              style="width:100%;  height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <button id="cucumberButton" type="button" class="btn btn-primary">Buy Cucumber's</button>  
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading" name="veggies">Chilli's</div>
+          <div class="panel-body"><img src="cart Images/chilli.jpg" class="img-responsive"
+              style="width:100%; height: 250px" alt="Image"></div>
+          <div class="panel-footer">
+            <button id="chilliButton" type="button" class="btn btn-primary">Buy Chilli's</button>
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-primary ">
+          <div class="panel-heading">Strawberry's </div>
+          <div class="panel-body"><img id="strawberyImg" src="cart Images/strawbery.jpg" class="img-responsive"
+              style="width:100%; height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <button id="strawberryButton" type="button" class="btn btn-primary"> Buy Strawberry's</button>
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Mango's</div>
+          <div class="panel-body"><img src="cart Images/mango.jpg" class="img-responsive"
+              style="width:100%;  height: 250px;" alt="Image"></div>
+          <div class="panel-footer">
+            <button id="mangoButton" type="button" class="btn btn-primary">Buy Mango's</button>   
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Pineapple's</div>
+          <div class="panel-body"><img src="cart Images/pineapple.jpg" class="img-responsive"
+              style="width:100%; height: 250px" alt="Image"></div>
+          <div class="panel-footer">
+            <button id=pineappleButton" type="button" class="btn btn-primary">Buy Pineapple's</button>  
+            <button id="addItems" type="button" class="btn btn-primary">Add Items to Cart</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div><br><br>
+
+  <footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+    <form class="form-inline" name="form">Get deals:
+      <input type="email" name='text' class="form-control" size="50" placeholder="Email Address" id="border">
+      <button type="button" class="btn btn-danger" onclick="ValidateEmail(document.form.text)">Sign Up</button>
+    </form>
+  </footer>
+
+</body>
+
+</html>
